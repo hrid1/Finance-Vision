@@ -1,10 +1,9 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://Thor:Loki@shil.m34eo.mongodb.net/financeApp?retryWrites=true&w=majority&appName=Shil";
+const MONGODB_URI = "mongodb+srv://Thor:Loki@shil.m34eo.mongodb.net/financeApp?retryWrites=true&w=majority&appName=Shil";
 
-if (MONGODB_URI) {
+
+if (!MONGODB_URI) {
   throw new Error("Plz define the mongodb URI");
 }
 // Global cache to prevent multiple connections in development
